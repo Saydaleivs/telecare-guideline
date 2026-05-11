@@ -2,7 +2,7 @@
 
 A step-by-step walkthrough of every screen in your Telecare Plus admin dashboard. Use it when you set up a new clinic, train a new team member, or look up how a specific page works.
 
-> **What Telecare Plus is for.** Telecare Plus runs **online consultations** — your doctors meet patients over video, voice, or chat. This dashboard is where you set up your clinics and doctors, watch appointments coming in, send invoices, run promotions, and pay your team. The patient app and the doctor app handle the actual calls; this dashboard is the back office.
+> **What Telecare Plus is for.** Telecare Plus runs both **online consultations** (video, voice, or chat) and **in-person appointments** at your clinic. This dashboard is where you set up your clinics and doctors, watch appointments coming in, send invoices, run promotions, and pay your team. The patient app and the doctor app handle the actual visits and calls; this dashboard is the back office.
 
 ---
 
@@ -82,7 +82,7 @@ A new clinic always lands here first. The checklist walks you through the eight 
 | 2 | **Clinic Type** | "General", "Dermatology", "Cardiology"… the broad category |
 | 3 | **Speciality** | Specific specialities each doctor practices |
 | 4 | **Doctor Level** | Consultant, Specialist, GP — the seniority tiers you charge for |
-| 5 | **Consultation Type** | Video, Voice, Chat — how patients can meet doctors |
+| 5 | **Consultation Type** | Video, Voice, Chat, or In-person — how patients can meet doctors |
 | 6 | **Clinic** | A real clinic = clinic type + medical center |
 | 7 | **Doctor** | Each practitioner with their name, gender, clinic, level, speciality |
 | 8 | **Price** | How much each (level × clinic × consultation type) costs |
@@ -143,7 +143,7 @@ Fields you fill in:
 - **Insurance practice code (NPHIES)** — required only if you submit insurance claims.
 - **Subspecialties**, **Description** (English + Arabic), **Avatar** photo, **Status** (Active / Inactive).
 
-> A **Location** section (latitude, longitude, service radius) may appear if your clinic does occasional home visits. Leave it off for a pure online-consultation clinic.
+> A **Location** section (latitude, longitude, service radius) may appear if your clinic also dispatches doctors to patient locations. Leave it off when this doctor only sees patients online or at your clinic.
 
 ### 5.2 Specialities
 
@@ -193,7 +193,7 @@ The top-level facilities under your account — usually one per branch / city.
 - The list shows the bilingual name, address, contact, MOH license number, and status.
 - Edit a center to update its name (English + Arabic), address, MOH license, official phone, official email, website, logo, **digital stamp** (used on printed prescriptions and lab orders), location, and status.
 
-> Even in a fully online operation, the **MOH license** and **digital stamp** are what make your prescriptions and reports official. Keep both up to date.
+> The **MOH license** and **digital stamp** are what make your prescriptions and reports official — they appear on every PDF the clinic produces, whether the visit was online or in-person. Keep both up to date.
 
 ---
 
@@ -225,7 +225,9 @@ Every booking — past, present, and future. The list shows ID, patient name, do
   - **Cancel Booking** — type a reason and confirm.
   - **Prescriptions** and **Lab Investigations** tabs — see what the doctor prescribed or ordered during this appointment.
 
-> Online consultations: the patient and the doctor join from their own mobile apps. The dashboard is only for booking, monitoring, and follow-up — not for joining calls.
+> **Online consultations:** the patient and the doctor join the call from their own mobile apps — the dashboard isn't used for the call itself, only for booking and follow-up.
+>
+> **In-person appointments:** the patient comes to your clinic at the scheduled slot. Use the dashboard to confirm the booking, reschedule if needed, and review what the doctor recorded afterwards.
 
 ---
 
@@ -245,7 +247,7 @@ The seniority tiers you charge differently for — for example Consultant, Speci
 
 ![Rank prices list](screenshots/telecare/42-rank-prices-list.png)
 
-The price list: one entry per (doctor level × clinic × consultation type). For example, "Cardiology consultant — video — 30 minutes — 250 SAR".
+The price list: one entry per (doctor level × clinic × consultation type). Set a different price for online and in-person if you charge differently. For example, "Cardiology consultant — video — 30 minutes — 250 SAR" and "Cardiology consultant — in-person — 30 minutes — 350 SAR".
 
 ![Rank price create](screenshots/telecare/43-rank-prices-create.png)
 
