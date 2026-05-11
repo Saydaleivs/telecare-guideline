@@ -1,17 +1,17 @@
-# Telecare Plus — Tenant Operations Guide
+# Telecare Plus — Tenant Operator Guide
 
-A step-by-step walkthrough of every screen in your Telecare Plus admin dashboard. Use it as a reference when onboarding a new tenant or training a new operator.
+A step-by-step walkthrough of every screen in your Telecare Plus admin dashboard. Use it when you set up a new clinic, train a new team member, or look up how a specific page works.
 
-> Telecare Plus tenants typically deliver **video / phone consultations**. The dashboard helps you configure doctors, set prices, monitor appointments, run financials, and manage marketing — all from one place. Pages that depend on a physical address (e.g. doctor location, patient address) are still available but usually not required for telecare workflows.
+> **What Telecare Plus is for.** Telecare Plus runs **online consultations** — your doctors meet patients over video, voice, or chat. This dashboard is where you set up your clinics and doctors, watch appointments coming in, send invoices, run promotions, and pay your team. The patient app and the doctor app handle the actual calls; this dashboard is the back office.
 
 ---
 
 ## Table of contents
 
 1. [Signing in](#1-signing-in)
-2. [Choosing your organization](#2-choosing-your-organization)
-3. [Getting started wizard](#3-getting-started-wizard)
-4. [Analytics dashboard](#4-analytics-dashboard)
+2. [Choosing your clinic](#2-choosing-your-clinic)
+3. [Getting started checklist](#3-getting-started-checklist)
+4. [Dashboard (analytics)](#4-dashboard-analytics)
 5. [Doctors & Staff](#5-doctors--staff)
    - [Doctors](#51-doctors)
    - [Specialities](#52-specialities)
@@ -19,27 +19,27 @@ A step-by-step walkthrough of every screen in your Telecare Plus admin dashboard
 6. [Clinics & Centers](#6-clinics--centers)
    - [Clinics](#61-clinics)
    - [Medical Centers](#62-medical-centers)
-7. [Patients & Encounters](#7-patients--encounters)
+7. [Patients & Appointments](#7-patients--appointments)
    - [Patients](#71-patients)
-   - [Encounters (Appointments)](#72-encounters-appointments)
-8. [Pricing & Ranks](#8-pricing--ranks)
-   - [Rank Types](#81-rank-types)
-   - [Rank Prices](#82-rank-prices)
+   - [Appointments](#72-appointments)
+8. [Pricing](#8-pricing)
+   - [Doctor levels](#81-doctor-levels)
+   - [Prices](#82-prices)
 9. [Integrations](#9-integrations)
    - [Apps](#91-apps)
    - [Messages](#92-messages)
-10. [Financial](#10-financial)
+10. [Money](#10-money)
     - [Invoices](#101-invoices)
     - [Insurance Claims](#102-insurance-claims)
-    - [Payout Transactions](#103-payout-transactions)
+    - [Payouts](#103-payouts)
     - [Provider Settings](#104-provider-settings)
 11. [Marketing](#11-marketing)
     - [Coupons](#111-coupons)
     - [Banners](#112-banners)
-12. [Administration](#12-administration)
+12. [Team Administration](#12-team-administration)
     - [Users](#121-users)
-13. [Account recovery (forgot / reset password)](#13-account-recovery)
-14. [Things worth knowing](#14-things-worth-knowing)
+13. [Forgot your password?](#13-forgot-your-password)
+14. [Quick tips](#14-quick-tips)
 
 ---
 
@@ -47,74 +47,70 @@ A step-by-step walkthrough of every screen in your Telecare Plus admin dashboard
 
 ![Telecare login](screenshots/telecare/01-login.png)
 
-- Open the URL provided by Codelines (e.g. `https://<your-tenant>.telecare.codelines.sa/system/login`).
-- Enter your **Email** and **Password** and click **Sign in**.
-- Use the globe icon in the top right to switch between English and العربية. The whole dashboard is bilingual and switches RTL/LTR automatically.
-- If you forgot your password, click **Forgot Password?** at the bottom of the card. See section 13 for the recovery flow.
-- After a successful password reset, you'll see a green confirmation banner above the form on your next visit.
+- Open **https://telecare.codelines.sa/system** in your browser (this is the same address for every Telecare Plus customer).
+- Type your **email** and **password**, then click **Sign in**.
+- The globe icon in the top right switches the dashboard between English and العربية. Everything — menus, labels, buttons — translates instantly, and Arabic flips the layout right-to-left automatically.
+- Forgot your password? Click **Forgot Password?** under the form. See [section 13](#13-forgot-your-password).
+- After you reset your password, you'll see a green confirmation banner the next time you sign in.
 
 ---
 
-## 2. Choosing your organization
+## 2. Choosing your clinic
 
 ![Select organization](screenshots/telecare/02-select-organization.png)
 
-If your account is linked to more than one tenant (e.g. you administer several clinics for the same group), you'll land on this screen right after sign-in.
+If your account is linked to more than one clinic group (e.g. you manage several brands), this screen appears right after sign-in.
 
-- Each card shows the **tenant name**, **App ID**, your **role** for that tenant (`root_admin`, `super_admin`, `medical_center_admin`), and any medical centers you're scoped to.
-- Type into the **search bar** to filter by name or App ID.
-- Click **Select** on the tenant you want to manage. The dashboard then loads with that tenant's data.
-- **Back to login** clears the local session and returns you to the sign-in page.
+- Each card shows the **clinic name**, an **ID**, your **role** (badge in yellow / red / blue), and the **medical centers** you can see.
+- Type into the **search box** to filter the list when you have many entries.
+- Click **Select** on the clinic you want to work in. The dashboard reloads with that clinic's data.
+- **Back to login** signs you out and returns to the sign-in screen.
 
-Once selected, your tenant is remembered for that browser session. You can switch tenants any time from the header dropdown in the top-right corner.
+Once selected, your clinic is remembered for the rest of your session. To switch later, use the dropdown at the **top-right of every page**.
 
 ---
 
-## 3. Getting started wizard
+## 3. Getting started checklist
 
 ![Getting started wizard](screenshots/telecare/03-getting-started.png)
 
-New tenants land here automatically until every required setup step is complete. The wizard configures the eight things every Telecare tenant needs before booking can work:
+A new clinic always lands here first. The checklist walks you through the eight things that have to be in place before patients can book an appointment.
 
-| Order | Step | What you provide |
+| Order | Step | What you fill in |
 |-----:|------|------------------|
-| 1 | Medical center | EN/AR name, MOH license, contact details, address, status |
-| 2 | Clinic type | E.g. "General", "Dermatology" — the type of clinic |
-| 3 | Speciality | E.g. "Cardiology", "Family Medicine" |
-| 4 | Rank type | Doctor levels: Consultant, Specialist, GP, etc. |
-| 5 | Consultation type | "Video", "Voice", "Chat" — the modalities you support |
-| 6 | Clinic | One concrete clinic = clinic-type × medical-center |
-| 7 | Doctor | A practitioner with name, gender, clinic, rank, speciality |
-| 8 | Rank price | Price per (rank × clinic × consultation type) |
+| 1 | **Medical Center** | English + Arabic name, MOH license, contact details, address |
+| 2 | **Clinic Type** | "General", "Dermatology", "Cardiology"… the broad category |
+| 3 | **Speciality** | Specific specialities each doctor practices |
+| 4 | **Doctor Level** | Consultant, Specialist, GP — the seniority tiers you charge for |
+| 5 | **Consultation Type** | Video, Voice, Chat — how patients can meet doctors |
+| 6 | **Clinic** | A real clinic = clinic type + medical center |
+| 7 | **Doctor** | Each practitioner with their name, gender, clinic, level, speciality |
+| 8 | **Price** | How much each (level × clinic × consultation type) costs |
 
-- The **progress bar** at the top shows how many steps are complete (e.g. `3 / 8`).
-- **Save and Continue** moves to the next step. **Save and Add Another** is offered after a step is satisfied so you can register multiple medical centers, doctors, etc.
-- **Skip** lets you defer a step (it can still be completed later from its dedicated page).
-- **View** jumps to the full list page for the resource (e.g. to see all medical centers you've added).
-- When every required step is satisfied, the wizard shows a success card and a **Go to Dashboard** button that takes you to Analytics.
+- The **progress bar** at the top shows how many of the eight steps are done (e.g. "3 / 8").
+- **Save and Continue** moves to the next step. **Save and Add Another** lets you add several entries in a row (multiple doctors, multiple prices…).
+- **Skip** lets you come back later — every step has its own page in the sidebar.
+- **View** opens the full list for that section so you can double-check what you've entered.
+- When every required step is done, a success card appears with a **Go to Dashboard** button.
 
-> You can revisit `/getting-started` at any time from the left sidebar.
+> You can revisit the checklist any time from **Getting Started** in the left sidebar.
 
 ---
 
-## 4. Analytics dashboard
+## 4. Dashboard (analytics)
 
 ![Analytics dashboard](screenshots/telecare/04-analytics.png)
 
-Your daily operations homepage. It pulls real-time KPIs from `GET /api/management/analytics` and recent encounters.
+Your daily homepage. Numbers update live as your team and your patients use the system.
 
-The page is organized top to bottom:
+Reading the page from top to bottom:
 
-1. **Organisation Overview** — Three clickable KPI cards: total **Patients**, **Doctors**, and **Total Appointments**. Click any of them to jump to that resource's list.
-2. **All Appointments** — Today vs. all-time breakdown by status:
-   - Today: Upcoming / Ongoing / Completed / Canceled
-   - All-time: same four buckets
-3. **Finance & Payments** — Four colored cards (Total Billed, Collected, Pending, Canceled) followed by a **Recent Payments** table with patient, doctor, date, amount and status. **View All Transactions** links to *Payout Transactions*.
-4. **Appointment Insights**
-   - **Appointment Status** — rose chart of status distribution
-   - **Appointment Breakdown** — column chart comparing categories
-5. **Appointments by Doctor** — bar chart of top doctors by volume. Switch the time window with the segmented control (**Today / This Week / This Month / Year to Date**).
-6. **Top Performers** — Two leaderboards: Top Doctors and Top Patients, each with medal badges. Clicking a row navigates to that doctor/patient's profile.
+1. **Clinic Overview** — three big clickable cards: total **Patients**, **Doctors**, and **Appointments**. Click any of them to open that full list.
+2. **All Appointments** — today versus all-time, broken into **Upcoming / Ongoing / Completed / Canceled** so you can see how today is shaping up.
+3. **Finance & Payments** — four cards (**Total Billed**, **Collected**, **Pending**, **Canceled**) followed by a list of recent payments. The **View All Transactions** link jumps to the payouts page.
+4. **Appointment Insights** — two charts: a circular "rose" chart of status distribution, and a column chart for breakdown.
+5. **Appointments by Doctor** — a bar chart showing your top doctors. The **Today / This Week / This Month / Year to Date** buttons change the time window.
+6. **Top Performers** — leaderboards of your **Top Doctors** and **Top Patients** with gold / silver / bronze badges. Click a row to open that person's profile.
 
 ---
 
@@ -124,43 +120,50 @@ The page is organized top to bottom:
 
 ![Doctors list](screenshots/telecare/10-doctors-list.png)
 
-Lists every practitioner in the tenant. Columns: ID, name (EN/AR), email, gender, clinic type, rank, status, NPHIES practice code (⚠️ icon if missing — NPHIES claims won't work without it).
+The full list of practitioners. Each row shows the doctor's ID, name (English + Arabic), email, gender, clinic type, level, status, and a flag for whether their insurance code is filled in.
 
-- Filter by **gender** and **status** with the column headers.
-- Row actions: **Show** profile, **Edit**, **Delete** (confirms first), **📅 Manage Availability** (opens the scheduling iframe for shifts/working hours), **🌴 Manage Vacations**.
+- Use the small dropdowns on the column headers to **filter by gender** or **status** (Active / Inactive).
+- The buttons at the end of each row do the following:
+  - **Eye icon** — view the doctor's full profile.
+  - **Pencil icon** — edit their details.
+  - **Trash icon** — remove them (you'll be asked to confirm).
+  - **📅 Calendar icon** — set their **working hours** (when they're available for appointments).
+  - **🌴 Suitcase / palm icon** — set their **vacation days** (when they're unavailable).
+- A small ⚠️ icon next to a doctor means an **insurance code (NPHIES practice code) is missing**. Insurance claims won't go through without it.
 
-#### Creating a doctor
+#### Adding a new doctor
 
 ![Doctors create](screenshots/telecare/11-doctors-create.png)
 
-Fields:
+Fields you fill in:
 
-- **Names** (English + Arabic), **Email**, **Contact info**, **Gender**
-- **Clinic**, **Rank**, **Speciality** (dropdowns sourced from the matching lookups)
-- **NPHIES practice code** — required if the tenant participates in NPHIES claims
-- **Subspecialties**, **Description** (EN + AR), **Avatar** upload, **Status**
+- **Name (English)** and **Name (Arabic)**.
+- **Email**, **Contact info** (phone), **Gender**.
+- **Clinic**, **Doctor Level**, **Speciality** — picked from the dropdowns you set up earlier.
+- **Insurance practice code (NPHIES)** — required only if you submit insurance claims.
+- **Subspecialties**, **Description** (English + Arabic), **Avatar** photo, **Status** (Active / Inactive).
 
-> The **Location** section (latitude, longitude, address, radius) only appears when the tenant's booking config has `requiresLocation = true`. Telecare tenants normally don't need this. If your tenant occasionally dispatches doctors to homes, it can be turned on; otherwise leave it off.
+> A **Location** section (latitude, longitude, service radius) may appear if your clinic does occasional home visits. Leave it off for a pure online-consultation clinic.
 
 ### 5.2 Specialities
 
 ![Specialities list](screenshots/telecare/12-specialities-list.png)
 
-A lookup table of medical specialities used to tag doctors and filter the patient-facing booking app.
+The list of medical specialities you offer. The patient app uses this list when patients filter for the doctor they need.
 
 ![Speciality create](screenshots/telecare/13-specialities-create.png)
 
-- Fields: **Name (EN)**, **Name (AR)**.
-- Add one entry per speciality you offer; the patient app uses this list to filter doctors.
+- Just two fields: **Name (English)** and **Name (Arabic)**.
+- Add one entry for every speciality your doctors cover.
 
 ### 5.3 Ratings
 
 ![Ratings list](screenshots/telecare/14-ratings-list.png)
 
-Read-only feedback that patients submit after a completed encounter. Columns: encounter ID, star rating (out of 5, rendered from a 1–10 score), free-text review, created date.
+What patients said after their appointments. Each row shows the appointment ID, the star rating, the patient's review text, and the date.
 
-- Use the filters at the column headers to find ratings by encounter or score.
-- Ratings cannot be edited or deleted from here — this is purely a review screen.
+- Use the column filters to find ratings for a particular appointment or score.
+- This screen is **read only** — patients submit the reviews, and you can read but not change them.
 
 ---
 
@@ -170,154 +173,152 @@ Read-only feedback that patients submit after a completed encounter. Columns: en
 
 ![Clinics list](screenshots/telecare/20-clinics-list.png)
 
-A clinic is one concrete department inside a medical center (e.g. "General Medicine at TeleCare HQ"). Columns: clinic type, medical center, contact number, status, doctor count, NPHIES specialty code.
+A "clinic" is one department inside a medical center — for example "General Medicine — Telecare HQ". Each row shows the clinic type, the medical center it belongs to, contact number, status, doctor count, and insurance code status.
 
 ![Clinic create](screenshots/telecare/21-clinics-create.png)
 
-- **Clinic type** — pick from the seeded list (set up via Getting Started).
+- **Clinic type** — pick from the list you created during setup.
 - **Medical center** — the parent facility.
-- **NPHIES clinic specialty code** — used in claims.
-- **Contact number**.
+- **Insurance specialty code** — used when sending claims.
+- **Contact number** — for patients and partners.
 
-Row actions: Show / Edit / Delete.
+The buttons on each row let you **view**, **edit**, or **delete** the clinic.
 
 ### 6.2 Medical Centers
 
 ![Medical centers list](screenshots/telecare/22-medical-centers-list.png)
 
-Top-level facilities under your tenant — usually one per branch.
+The top-level facilities under your account — usually one per branch / city.
 
-- Columns: bilingual name, address, contact, MOH license, status.
-- Edit a center to update its EN/AR name, address, MOH license, contact phone, official email, website, logo URL, digital stamp URL, latitude/longitude, status.
+- The list shows the bilingual name, address, contact, MOH license number, and status.
+- Edit a center to update its name (English + Arabic), address, MOH license, official phone, official email, website, logo, **digital stamp** (used on printed prescriptions and lab orders), location, and status.
 
-> Even for telecare, a medical center carries the **MOH license** that links your tenant to regulatory and NPHIES integrations, plus the **digital stamp** used on PDFs (prescriptions, lab orders). Keep these accurate.
+> Even in a fully online operation, the **MOH license** and **digital stamp** are what make your prescriptions and reports official. Keep both up to date.
 
 ---
 
-## 7. Patients & Encounters
+## 7. Patients & Appointments
 
 ### 7.1 Patients
 
 ![Patients list](screenshots/telecare/30-patients-list.png)
 
-Every patient who has registered or been registered for an appointment.
+The list of patients registered in your system.
 
 - Columns: ID, English name, email, phone, national ID.
-- Filter by email or phone via the column headers, or use the top **search** for free-text matches.
-- Click **Show** for the profile or **Edit** to update the name, email, phone, national ID, or a free-form note.
+- Filter by email or phone with the small column dropdowns; the top **search** does a free-text match across name and contact info.
+- Click the **eye icon** to see the full profile, or the **pencil icon** to edit name, email, phone, national ID, or add a free-form note.
 
-> Patients can only be created from the booking app or via the API. The dashboard view is intentionally read-mostly — keep edits to corrections.
+> Patients register themselves through the patient mobile app. The dashboard is mostly for viewing — keep your edits limited to corrections.
 
-### 7.2 Encounters (Appointments)
+### 7.2 Appointments
 
 ![Encounters list](screenshots/telecare/31-encounters-list.png)
 
-Every booked, completed, or canceled appointment.
+Every booking — past, present, and future. The list shows ID, patient name, doctor name, the number of clinical notes on file, start time, and whether it's canceled.
 
-- Columns: ID, patient name, doctor name, clinical notes count, start time, "is canceled" flag.
-- Filters: patient, doctor, status (Confirmed / Canceled), plus a top **search** by patient or doctor name.
-- **+ Add Appointment** opens a modal: the dashboard fetches the list of available doctors, lets you pick one, and renders the scheduling iframe to book in their calendar. On save, the list refreshes.
-- The **Show** view (eye icon) of an encounter has its own action bar:
-  - **Booking Details** — opens the underlying booking record.
-  - **Reschedule** — opens a scheduling iframe pre-loaded with the encounter's date.
-  - **Cancel Booking** — collects a reason and calls the cancel endpoint.
-  - Tabs for **Prescriptions** and **Lab Investigations** scoped to this encounter.
+- Filter by patient, doctor, or status (Confirmed / Canceled) using the column dropdowns. The top **search** finds appointments by patient or doctor name.
+- **+ Add Appointment** opens a window where you can pick an available doctor and book a slot on their calendar on the patient's behalf.
+- Click an appointment to open its **details page**. From there you can:
+  - **View Booking Details** — see the full booking record.
+  - **Reschedule** — open the doctor's calendar pre-set to this appointment so you can pick a new slot.
+  - **Cancel Booking** — type a reason and confirm.
+  - **Prescriptions** and **Lab Investigations** tabs — see what the doctor prescribed or ordered during this appointment.
 
-> Telecare appointments will typically be **Online** consultation type. The patient and the doctor join from the patient/doctor mobile apps; this dashboard is for back-office monitoring, not the call itself.
+> Online consultations: the patient and the doctor join from their own mobile apps. The dashboard is only for booking, monitoring, and follow-up — not for joining calls.
 
 ---
 
-## 8. Pricing & Ranks
+## 8. Pricing
 
-### 8.1 Rank Types
+### 8.1 Doctor levels
 
 ![Rank types list](screenshots/telecare/40-rank-types-list.png)
 
-Doctor seniority levels you charge differently for (Consultant / Specialist / GP / etc.).
+The seniority tiers you charge differently for — for example Consultant, Specialist, GP.
 
 ![Rank type create](screenshots/telecare/41-rank-types-create.png)
 
-- Fields: **Name (EN)**, **Name (AR)**.
+- Fields: **Name (English)** and **Name (Arabic)**. Nothing else.
 
-### 8.2 Rank Prices
+### 8.2 Prices
 
 ![Rank prices list](screenshots/telecare/42-rank-prices-list.png)
 
-The pricing matrix: one entry per (rank × clinic × consultation type).
+The price list: one entry per (doctor level × clinic × consultation type). For example, "Cardiology consultant — video — 30 minutes — 250 SAR".
 
 ![Rank price create](screenshots/telecare/43-rank-prices-create.png)
 
-- **Rank**, **Clinic**, **Consultation type** — pick from the seeded lookups.
-- **Price** in your tenant's currency.
-- **Duration (minutes)** — how long this consultation slot is.
-- **Description** — visible in the patient app.
+- **Doctor Level**, **Clinic**, **Consultation Type** — pick from the dropdowns.
+- **Price** in your currency.
+- **Duration (minutes)** — how long the slot is. This sets the appointment length on the doctor's calendar.
+- **Description** — what the patient sees next to the price in the booking app.
 
-> When a tenant's booking policy is `leastFirst`, the **Rank** field is hidden — the system always books the cheapest applicable rank automatically. You'll see this on tenants where the patient picks "I want the cheapest" instead of a specific seniority.
+> Some clinics are set up so the patient just picks the cheapest available doctor (without choosing a level). On those clinics the **Doctor Level** field is hidden — the system picks automatically.
 
 ---
 
 ## 9. Integrations
 
-These pages embed the same scheduling-platform UI that the patient and doctor apps consume. The dashboard fetches a tenant-specific config from `/api/management/organization/scheduling-iframe?action=<feature>` and renders an iframe.
+These two pages let you configure parts of the booking platform that power your patient and doctor apps. The first time you open one, give it a few seconds to load.
 
 ### 9.1 Apps
 
 ![Apps page](screenshots/telecare/50-apps.png)
 
-Manage the **add-ons** enabled for this tenant on the scheduling backend (e.g. notifications, integrations, custom flows).
+Turn on or off the **add-ons** that extend your clinic — for example payment providers, notification channels, or custom integrations.
 
 ### 9.2 Messages
 
 ![Messages page](screenshots/telecare/51-messages.png)
 
-Configure SMS/email/WhatsApp templates and channels via the scheduling messages module.
+Set up the **SMS, email, and WhatsApp templates** your clinic sends — appointment reminders, confirmations, follow-ups.
 
 ---
 
-## 10. Financial
+## 10. Money
 
 ### 10.1 Invoices
 
 ![Invoices page](screenshots/telecare/60-invoices.png)
 
-Embedded invoice management from the scheduling platform: issue invoices, view paid/unpaid status, attach to encounters.
+Issue invoices, view what's paid and what's still pending, and attach invoices to appointments.
 
 ### 10.2 Insurance Claims
 
 ![Insurance claims](screenshots/telecare/61-insurance-claims.png)
 
-Embedded NPHIES claims workflow. You can submit eligibility checks, pre-authorizations, and reimbursement claims for encounters where the patient has insurance.
+Submit and track insurance claims through the Saudi national health insurance network (NPHIES) — eligibility checks, pre-authorizations, and reimbursements.
 
-> Claims will only work if the doctor's **NPHIES practice code** and the clinic's **NPHIES specialty code** are filled in (you'll see ⚠️ icons on the doctors and clinics list when they're missing).
+> Claims won't work without two things: the doctor's **insurance practice code** and the clinic's **insurance specialty code**. The ⚠️ icons on the Doctors and Clinics lists tell you which ones are missing.
 
-### 10.3 Payout Transactions
+### 10.3 Payouts
 
 ![Payout transactions](screenshots/telecare/62-payout-transactions.png)
 
-Batch payments to your providers (doctors). Each row is a payout for a period.
+Batch payments to your doctors. Each row is one payout for a date range.
 
-- Columns: ID, period start, period end, total, total before revenue cut, status (draft / processing / completed / failed / cancelled).
-- Filter by status. Pagination is cursor-based — click **Load More** for older batches.
-- **Create** opens a modal for the period dates and creates a draft batch.
-- Row actions:
-  - **View** — opens a detail modal listing the per-provider lines.
-  - **Cancel** — only when status is `draft`.
-  - **Execute** (inside the detail modal, draft only) — fires the payment.
-  - **Export Excel** — completed batches export the line items.
+- Columns: ID, period start, period end, total, total before your cut, status.
+- **Status** is one of Draft, Processing, Completed, Failed, or Cancelled. Use the filter to narrow down. Click **Load More** for older batches.
+- **Create** opens a window where you pick the start and end dates and creates a **draft** payout.
+- Click a row to open the details:
+  - **Execute** — only available for draft batches; this actually sends the money.
+  - **Cancel** — only available for draft batches.
+  - **Export Excel** — completed batches can be exported as a spreadsheet.
 
 ### 10.4 Provider Settings
 
 ![Provider settings](screenshots/telecare/63-provider-settings-list.png)
 
-Per-provider payout configuration.
+The payment setup for each doctor.
 
-- Columns: provider user ID, display name, email, phone, bank name, IBAN, revenue percentage, automated-payout flag.
-- Edit a provider to set:
-  - **Bank Full Name**, **IBAN** — for transfers.
-  - **Revenue Percentage** — share of each booking that goes to the provider (0–1, e.g. 0.7 = 70%).
-  - **Automated Payout** — toggle automatic execution at period end.
+- Columns: ID, name, email, phone, bank name, IBAN, your revenue share, and whether payouts run automatically.
+- Edit a row to set:
+  - **Bank Full Name** and **IBAN** — where the money goes.
+  - **Revenue Percentage** — the share each doctor takes home (between 0 and 1; for example **0.7** means **70%** to the doctor and **30%** to the clinic).
+  - **Automated Payout** — turn on if you want payouts to fire automatically at the end of each period.
 
-Creation/deletion are intentionally disabled — providers are auto-created when a doctor is added.
+Doctors appear here automatically once you've added them; you don't add or remove entries from this page directly.
 
 ---
 
@@ -327,66 +328,65 @@ Creation/deletion are intentionally disabled — providers are auto-created when
 
 ![Coupons page](screenshots/telecare/70-coupons.png)
 
-Embedded promotion-management page. Create discount codes, set redemption windows, scope to specific clinics or services.
+Create discount codes — set the amount, the dates they're valid, and which clinics or services they apply to.
 
 ### 11.2 Banners
 
 ![Banners list](screenshots/telecare/71-banners-list.png)
 
-Promotional banners that appear in the patient app's home screen.
+The big promotional images on the patient app's home screen.
 
 ![Banner create](screenshots/telecare/72-banners-create.png)
 
-- Single-field form: **Image URL**.
-- The list shows a thumbnail per banner; reorder by deleting/re-adding (sequence is creation order).
-- Use this for campaigns, seasonal promotions, or notices.
+- One field: **Image URL**.
+- The list shows a thumbnail of each banner. To reorder, delete and re-add — the latest banner appears last.
+- Use it for campaigns, seasonal offers, or service announcements.
 
 ---
 
-## 12. Administration
+## 12. Team Administration
 
 ### 12.1 Users
 
 ![Users list](screenshots/telecare/80-users-list.png)
 
-Tenant admin users (everyone who can sign into this dashboard).
+Your team — everyone who can sign into this dashboard.
 
-- Columns: name, email, role (super_admin / root_admin / medical_center_admin), assigned medical centers.
-- Use the top **search** to find by name; column filters narrow by email or role.
-- Click **Show** to inspect a user's full profile.
+- Columns: name, email, role, and the medical centers they can access.
+- The top **search** finds people by name; the column filters narrow by email or role.
+- Click the **eye icon** to see a user's full profile.
 
-> This page is read-only by design. To invite or remove users, contact Codelines or use the API. Roles are:
+> This page is **view only**. To invite a new admin or revoke an existing one, contact Codelines support. The roles you'll see are:
 >
-> - **root_admin** — full access across all medical centers of the tenant.
-> - **super_admin** — manage clinical and operational resources for assigned medical centers.
-> - **medical_center_admin** — scoped to a specific medical center.
+> - **Owner (root_admin)** — full access across the whole clinic group.
+> - **Manager (super_admin)** — manages a group of medical centers.
+> - **Center admin (medical_center_admin)** — limited to one specific medical center.
 
 ---
 
-## 13. Account recovery
+## 13. Forgot your password?
 
-### Forgot password (`/forgot-password`)
+### Step 1 — Request a reset link
 
-- Enter your **email** and submit.
-- The system sends a password-reset link to that mailbox. The form turns into a success confirmation.
+- From the sign-in page, click **Forgot Password?**.
+- Type your email and submit. You'll see a confirmation message; an email with a reset link will arrive in your inbox.
 
-### Reset password (`/reset-password?token=...`)
+### Step 2 — Set a new password
 
-- Open the link in the email.
-- Enter a new **password** (minimum 6 characters) and **confirm** it.
-- On success you're redirected to `/login?reset=success` and see a green confirmation banner.
+- Open the link in your email — it takes you to a page with two boxes: **new password** and **confirm**.
+- Pick a password at least **6 characters** long, type it twice, and submit.
+- You'll be sent back to the sign-in page with a green confirmation banner.
 
-If the link is missing the `token` query parameter, you'll see an "invalid token" alert; request a new reset email from the Forgot Password page.
+If the link in your email says "invalid token", request a new one from the Forgot Password page.
 
 ---
 
-## 14. Things worth knowing
+## 14. Quick tips
 
-- **Bilingual everywhere.** Every list, form and confirm dialog ships in EN and AR. The globe icon in the top-right toggles language and the whole app switches direction automatically.
-- **Tenant switcher** lives in the page header (top-right). It lists the same organizations you saw at sign-in.
-- **Unsaved changes** in forms trigger a confirmation if you try to navigate away.
-- **App URL chip** at the top of every page (left side of the header) shows the public domain for the patient-facing app, with a copy-to-clipboard icon — useful when training new staff or sending links to patients.
-- **Resource & API endpoint mapping** — every list/create/edit page in this guide maps to a Refine resource that calls `GET /api/<resource>`, `POST /api/<resource>`, `PATCH /api/<resource>/:id`, `DELETE /api/<resource>/:id`. Embedded webview pages (Apps, Messages, Invoices, Insurance Claims, Coupons) load a `scheduling-iframe?action=<feature>` config first.
-- **Where prescriptions, lab investigations, recommendations, and private notes live.** These are intentionally hidden from the main sidebar — they're authored by doctors in the doctor mobile app and surfaced under each Encounter's Show page (Prescriptions and Lab Investigations tabs). You can download them as PDFs from there.
-- **Common warning icons.** A ⚠️ next to a doctor or clinic means a NPHIES code is missing; fix it before submitting claims.
-- **Need infrastructure access?** If you are a Codelines platform-root operator you'll see an extra link in the header to manage all tenants (`/organizations`). Normal tenant admins won't see this.
+- **English ↔ Arabic anywhere.** The globe icon in the top-right switches the whole dashboard between languages and flips the layout for Arabic.
+- **Switch between clinics.** The dropdown at the top-right of every page lists the clinics your account can access.
+- **Patient app URL.** The top of every page (left of the header) shows the public address of your patient-facing app, with a copy button next to it. Useful when training new staff or sharing the link with patients.
+- **Unsaved changes.** If you edit something and try to leave the page without saving, the dashboard will ask you to confirm.
+- **Where prescriptions and lab orders live.** They're not in the sidebar on their own — your doctors create them in their doctor app, and you'll find them on each Appointment's details page under the **Prescriptions** and **Lab Investigations** tabs. You can download them as PDFs from there.
+- **Watch for the ⚠️ icon.** It always means an insurance code is missing on a doctor or clinic. Fill it in before you submit claims.
+- **Need help?** Contact Codelines support — they can adjust account access, add team members, or assist with anything you can't do from the dashboard yourself.
